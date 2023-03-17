@@ -1,0 +1,22 @@
+
+
+syntax = "proto3";
+package backup;
+
+option go_package = "github.com/qkfktm54/grpc-backup-service/pkg/backup/proto";
+
+
+message DirectoryRequest {
+    optional string sub_directory = 1;
+}
+message DirectoryResponse {
+    repeated string contents = 1;
+}
+
+
+
+service Backup {
+    rpc Dir(DirectoryRequest) returns (DirectoryResponse);
+//    rpc Upload()
+
+}
